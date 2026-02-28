@@ -98,6 +98,8 @@
     pointer-events: none;
     transition: opacity 0.3s;
     z-index: -1;
+    height: 100dvh;
+    overflow: hidden;
   }
   .nav-links.open { opacity: 1; pointer-events: all; z-index: 99; }
   .nav-links a { color: var(--cream); font-size: 1rem; letter-spacing: 0.18em; }

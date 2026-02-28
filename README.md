@@ -13,33 +13,6 @@ A modern, responsive agency website built with React + Vite. Designed to showcas
 
 ---
 
-## Project Structure
-
-```
-src/
-├── App.jsx                  # Root component, assembles all sections
-├── main.jsx                 # Entry point, mounts App into the DOM
-├── styles/
-│   └── global.css           # Design tokens, shared styles, animations
-├── data/
-│   └── content.js           # All text, images, and copy in one place
-├── hooks/
-│   └── useScrollReveal.js   # Scroll-triggered fade-in animation hook
-└── components/
-    ├── Cursor.jsx            # Custom gold cursor with ring effect
-    ├── Navbar.jsx            # Sticky nav, changes style on scroll
-    ├── Hero.jsx              # Full-screen hero with images and stats
-    ├── Marquee.jsx           # Scrolling ticker strip
-    ├── Services.jsx          # 6-card services grid
-    ├── Portfolio.jsx         # Image-based project showcase
-    ├── Process.jsx           # 4-step process + stats panel
-    ├── Testimonials.jsx      # 3 client testimonial cards
-    ├── CTA.jsx               # Call-to-action with background image
-    └── Footer.jsx            # Links, socials, copyright
-```
-
----
-
 ## Getting Started
 
 **Install dependencies:**
