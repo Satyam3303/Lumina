@@ -1,0 +1,101 @@
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.step:last-child { border-bottom: none; }
+
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold);
+  padding-top: 4px;
+  min-width: 28px;
+  letter-spacing: 0.06em;
+}
+.step-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.step-body p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* VISUAL SIDE */
+.process-visual {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.process-img-wrap {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 0;
+}
+.process-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.process-img-wrap:hover .process-img { transform: scale(1.04); }
+
+.pv-stats {
+  background: var(--dark);
+  padding: 16px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.pv-stat {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.pv-stat:nth-child(2n) { border-right: none; padding-left: 28px; }
+.pv-stat:nth-child(3), .pv-stat:nth-child(4) { border-bottom: none; }
+.pv-stat:nth-child(even) { padding-left: 28px; }
+
+.pv-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1;
+}
+.pv-num span { color: var(--gold); }
+.pv-label {
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .process-grid { grid-template-columns: 1fr; gap: 48px; }
+  .process-visual { position: static; }
+}

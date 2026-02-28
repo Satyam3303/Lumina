@@ -1,0 +1,105 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 24px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(245, 240, 232, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 16px 72px;
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--dark);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 44px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.25s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 26px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--cream); }
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: none;
+}
+.nav-burger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--dark);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-burger span.open:first-child { transform: translateY(7.5px) rotate(45deg); }
+.nav-burger span.open:last-child  { transform: translateY(-7.5px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .navbar { padding: 20px 24px; }
+  .navbar.scrolled { padding: 16px 24px; }
+  .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: -1;
+  }
+  .nav-links.open { opacity: 1; pointer-events: all; z-index: 99; }
+  .nav-links a { color: var(--cream); font-size: 1rem; letter-spacing: 0.18em; }
+  .nav-links a:hover { color: var(--gold); }
+}
